@@ -1,0 +1,100 @@
+button.nav__menu {
+    display: none;
+    margin-right: 20px;
+}
+
+.drawer__close {
+    cursor: pointer;
+}
+
+.drawer__close:hover svg {
+    opacity: .8;
+}
+
+.drawer__list div span {
+    font-weight: 700;
+    font-family: 'Kumbh Sans';
+}
+
+
+.nav__container {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.nav__logo {
+    cursor: pointer;
+}
+
+.nav__items {
+    display: flex;
+    gap: 2.5em;
+    /* gap: 8vmin; */
+    margin-left: 3em;
+    color: var(--dark-gray-blue);
+}
+
+.nav__item {
+    list-style: none;
+    padding: 36px 0;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.nav__item:hover {
+    border-bottom: 3px solid var(--orange);
+}
+
+.nav__link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav__actions {
+    display: flex;
+    margin-left: auto;
+    gap: 2em;
+}
+
+.nav__avatar:hover {
+    /* border: 1px solid orange; */
+    box-shadow: 0 0 0 2px var(--orange);
+    cursor: pointer;
+}
+
+
+.shopCart {
+    padding: 3px;
+}
+
+.shopCart__title {
+    padding: 10px 20px;
+}
+
+button.shopCart__deleteIcon {
+    margin-right: 0;
+}
+
+
+
+@media screen and (max-width:768px) {
+    .nav__items {
+        display: none;
+    }
+
+    button.nav__menu {
+        display: inline-flex;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav__container {
+        height: 70px;
+        padding: 0 12px;
+    }
+
+    .nav__actions {
+        gap: 1em;
+    }
+}
