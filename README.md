@@ -5,8 +5,8 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/ecommerceproductpagereactjstypescript-BRdn76Q4H)
+- Live Site URL: [Live site URL here](https://ecstatic-liskov-a9228a.netlify.app)
 
 ## My process
 
@@ -20,7 +20,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 
 ## Author
