@@ -1,11 +1,16 @@
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
-import { ShopCartProvider } from "./components/context/ShopCartContext";
+import { ShopCartProvider } from "./context/ShopCartContext";
 import { HomePage } from "./pages/HomePage";
+import { theme } from "./components/theme/theme";
 
-const AppState = ({children}: any) => {
-    return <ShopCartProvider>{children}</ShopCartProvider>
-}
+const AppState = ({ children }: any) => {
+    return (
+        <ShopCartProvider>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </ShopCartProvider>
+    );
+};
 
 const App = () => {
     return (

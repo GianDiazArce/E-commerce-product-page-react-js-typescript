@@ -1,8 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import "./product.css";
 import { styled } from "@mui/styles";
-import { ShopCartContext } from "../context/ShopCartContext";
+import { ShopCartContext } from "../../context/ShopCartContext";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
+import { getImageNum } from "../../helpers/getImageNum";
 
 const ButtonCart = styled(Button)({
     backgroundColor: "hsl(26, 100%, 55%)",
@@ -60,6 +63,17 @@ export const Product = () => {
             quantity,
             total: quantity * shopCartItem.price,
         });
+    };
+
+    const handleNextImage = () => {
+        const index = getImageNum(currentPhoto);
+
+        index <= 4 && setCurrentPhoto(`product-${index + 1}` as PhotoGallery);
+    };
+    const handlePrevImage = () => {
+        const index = getImageNum(currentPhoto);
+
+        index >= 1 && setCurrentPhoto(`product-${index - 1}` as PhotoGallery);
     };
 
     return (
@@ -126,6 +140,34 @@ export const Product = () => {
                         />
                     </figure>
                 </div>
+                <div className="btn__controller btn__right">
+                    <IconButton
+                        onClick={handleNextImage}
+                        disabled={currentPhoto === "product-4"}
+                        sx={{
+                            backgroundColor: "white",
+                            "&:hover": {
+                                background: "rgba(255, 255, 255, .3)",
+                            },
+                        }}
+                    >
+                        <ArrowForwardIosOutlinedIcon />
+                    </IconButton>
+                </div>
+                <div className="btn__controller btn__left">
+                    <IconButton
+                        onClick={handlePrevImage}
+                        disabled={currentPhoto === "product-1"}
+                        sx={{
+                            backgroundColor: "white",
+                            "&:hover": {
+                                background: "rgba(255, 255, 255, .3)",
+                            },
+                        }}
+                    >
+                        <ArrowBackIosOutlinedIcon />
+                    </IconButton>
+                </div>
             </div>
             <div className="product__texts">
                 <span className="product__company">SNEAKER COMPANY</span>
@@ -179,6 +221,7 @@ export const Product = () => {
                         className="product__button"
                         startIcon={<CartIcon />}
                         onClick={handleAddToShopCart}
+                        sx={{ color: "white" }}
                     >
                         Add to cart
                     </ButtonCart>

@@ -10,11 +10,12 @@ import {
     Divider,
     Button,
     ListItemAvatar,
+    Badge,
 } from "@mui/material";
 import { useContext, useState } from "react";
 import "./navbar.css";
-import { ShopCartContext } from "../context/ShopCartContext";
 import { styled } from "@mui/styles";
+import { ShopCartContext } from "../../context/ShopCartContext";
 
 const MenuIcon = () => {
     return (
@@ -194,7 +195,17 @@ export const Navbar = () => {
                         aria-describedby="simple-popover"
                         onClick={handleShopButtonClick}
                     >
-                        <img src="/assets/images/icon-cart.svg" alt="" />
+                        <Badge
+                            color="secondary"
+                            badgeContent={shopCart[0]?.quantity || 0}
+                            sx={{
+                                "& .MuiBadge-badge": {
+                                    color: "white",
+                                },
+                            }}
+                        >
+                            <img src="/assets/images/icon-cart.svg" alt="" />
+                        </Badge>
                     </IconButton>
                     <Popover
                         id={"simple-popover"}

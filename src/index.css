@@ -10,6 +10,7 @@
   --light-gray-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
+  --input-bg: hsl(230, 60%, 98%);
   /*(with 75% opacity for lightbox background)*/
 
   --border-radius: 10px;
@@ -32,6 +33,6 @@ body {
 
 @media screen and (max-width: 600px) {
   div.container-main {
-    padding: 0 ;
+    padding: 0;
   }
 }
